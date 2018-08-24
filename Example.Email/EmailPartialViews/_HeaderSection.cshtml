@@ -1,0 +1,23 @@
+﻿@using RazorEngine
+@using Example.Email
+@inherits RazorEngine.Templating.TemplateBase<EmailTemplateBase>
+
+<tr>
+    <td class="masthead-cell" style="font-family: Helvetica, Arial, Sans-Serif; padding: 19px 0;">
+        <!-- start of masthead -->
+        <table width="100%" height="90" class="masthead" style="font-family: Helvetica, Arial, Sans-Serif; border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border: none;" cellpadding="0" cellspacing="0">
+            <tbody>
+            <tr>
+                <td valign="middle" width="1%" align="center" class="logo" style="font-family: Helvetica, Arial, Sans-Serif;">
+                    <!-- start of logo -->
+                    <a href="@Model.HeaderUrl" target="_blank" class="caption" style="color: #000000; font-size: 12px; line-height: 20px; text-decoration: underline;">
+                        <img src="@Model.HeaderImageUrl" height="100" border="0" alt="@Model.NameOfSender" title="@Model.NameOfSender">
+                    </a>
+                    <!-- end of logo -->
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <!-- end of masthead -->
+    </td>
+</tr>

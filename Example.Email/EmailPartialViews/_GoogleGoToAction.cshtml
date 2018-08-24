@@ -1,0 +1,5 @@
+﻿@using RazorEngine
+@using Example.Email
+@inherits RazorEngine.Templating.TemplateBase<EmailTemplateBase>
+
+<div itemscope="" itemtype="http://schema.org/EmailMessage" style="display:none"><div itemprop="action" itemscope="" itemtype="http://schema.org/ViewAction"><link itemprop="url" href="@Model.GoogleGoToActionUrl"><meta itemprop="name" content="@Model.Preheader"></div><meta itemprop="description" content="@Model.Preheader"></div>

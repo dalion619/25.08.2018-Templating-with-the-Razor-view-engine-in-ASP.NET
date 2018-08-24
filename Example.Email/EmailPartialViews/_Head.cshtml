@@ -1,0 +1,243 @@
+﻿@using RazorEngine
+@using Example.Email
+@inherits RazorEngine.Templating.TemplateBase<EmailTemplateBase>
+
+<head>
+    <meta name="email-subject" content="@Model.Subject">
+    <meta name="email-preheader" content="@Model.Preheader">
+    <meta name="modern-charset" charset="UTF-8">
+    <meta name="legacy-charset" http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="address=no, telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!--[if !mso]><!-- -->
+    <meta name="ie-compatibility" http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<![endif]-->
+    <title>@Model.Subject</title>
+    <link href="@Model.FavIconUrl" rel="Shortcut icon" type="image/x-icon">
+    <!--[if mso]><style type="text/css">   v\:* {behavior:url(#default#VML);}   a {font-family: Helvetica, Arial, sans-serif !important;}   table, td { font-family: Helvetica, Arial, sans-serif !important; }   img {-ms-interpolation-mode: bicubic !important;}     </style><![endif]-->
+    <style type="text/css">
+        .copy {
+            color: @Model.CopyHexColor;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        a.btn.full-width-invert {
+            color: #499bd3;
+            background-color: #ffffff;
+        }
+
+        a.btn.full-width {
+            background: linear-gradient(to bottom, #e100ff, @Model.PrimaryHexColor);
+            background-color: @Model.PrimaryHexColor;
+            color: #ffffff;
+        }
+
+        .primary-color {
+            color: @Model.PrimaryHexColor;
+        }
+
+        .primary-background-color {
+            background-color: @Model.PrimaryHexColor;
+        }
+
+        @@media only screen and (max-width: 599px) {
+            .footer-cell {
+                padding-right: 0 !important;
+                padding-left: 0 !important;
+            }
+
+            .h1 {
+                font-size: 24px !important;
+                line-height: 26px !important;
+            }
+
+            .footer {
+                width: 100% !important;
+                margin: 0 auto !important;
+            }
+
+                .footer .address {
+                    padding-left: 15px !important;
+                    padding-right: 15px !important;
+                }
+
+                .footer .options a {
+                    line-height: 53px !important;
+                    display: block !important;
+                    border-top: 1px solid #EAEAEA !important;
+                    border-bottom: none !important;
+                    font-size: 10px !important;
+                    padding-bottom: 0 !important;
+                }
+
+            .primary-nl-feature-module .h1 {
+                font-size: 24px !important;
+                line-height: 35px !important;
+            }
+
+            .primary-nl-feature-module .copy {
+                font-size: 16px !important;
+                line-height: 26px !important;
+            }
+
+            .primary-nl-2col-module .col-left {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            .primary-nl-2col-module .col-right {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            .primary-nl-2col-module .column .txt-box {
+                float: none !important;
+                width: 100%;
+            }
+
+                .primary-nl-2col-module .column .txt-box .title a {
+                    font-size: 20px !important;
+                }
+
+                .primary-nl-2col-module .column .txt-box .copy {
+                    line-height: 26px !important;
+                    font-size: 16px !important;
+                }
+
+                .primary-nl-2col-module .column .txt-box .cta-row .cta {
+                    width: 1% !important;
+                }
+
+                    .primary-nl-2col-module .column .txt-box .cta-row .cta .col-left {
+                        display: table-cell !important;
+                    }
+
+                    .primary-nl-2col-module .column .txt-box .cta-row .cta .col-right {
+                        display: table-cell !important;
+                    }
+
+                    .primary-nl-2col-module .column .txt-box .cta-row .cta .col-left a {
+                        font-size: 16px !important;
+                    }
+
+            .primary-module .content-row {
+                padding-right: 0 !important;
+                padding-left: 0 !important;
+            }
+
+            .primary-module .gradient .content .title {
+                padding-bottom: 5px !important;
+            }
+
+            .primary-module .gradient .content .caption {
+                line-height: 25px !important;
+            }
+
+            .primary-module .content-row .tip .tip-example .caption {
+                display: block !important;
+                padding-bottom: 0 !important;
+                width: 100% !important;
+                font-size: 16px !important;
+            }
+
+            .primary-module .content-row .tip .tip-example .txt {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            .primary-nl-module .content .primary-container .col-left {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            .primary-nl-module .content .primary-container .col-right {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            .primary-nl-module .content .primary-container .col-left {
+                padding-right: 0 !important;
+                padding-bottom: 7px !important;
+            }
+
+            .primary-nl-module .content .primary-container .col-right .txt .date a {
+                font-size: 14px !important;
+            }
+
+            .primary-nl-module .content .primary-container .col-right .txt .title a {
+                font-size: 24px !important;
+            }
+
+            .primary-nl-module .content .primary-container .col-right .txt .copy {
+                font-size: 16px !important;
+                line-height: 27px !important;
+            }
+
+            .container {
+                width: 100% !important;
+                min-width: 100% !important;
+                max-width: 100% !important;
+                table-layout: fixed !important;
+            }
+
+            .btn {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .hide {
+                display: none !important;
+                height: 0 !important;
+                width: 0 !important;
+                visibility: hidden !important;
+            }
+
+            .hide-on-device {
+                display: none !important;
+                height: 0 !important;
+                width: 0 !important;
+                visibility: hidden !important;
+            }
+
+            .img-flex {
+                width: 100% !important;
+            }
+
+            .full-width {
+                width: 100% !important;
+            }
+        }
+
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        body {
+            -moz-osx-font-smoothing: always;
+            -webkit-appearance: none;
+            -webkit-font-smoothing: antialiased;
+            font-smooth: always;
+            margin: 0;
+            padding: 0;
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+            width: 100%;
+        }
+
+        img {
+            border: none;
+            display: block;
+        }
+    </style>
+
+</head>
